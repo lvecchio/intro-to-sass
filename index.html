@@ -55,6 +55,7 @@
 					<ul>
 						<li>An understanding of what sass is</li>
 						<li>How to use sass within a project</li>
+						<li>Best practices of writing sass</li>
 					</ul>
 				</section>
 
@@ -66,7 +67,11 @@
 
 				<section>
 					<h3>How does it work?</h3>
-					<p>After writing your Sass code, it is processed and saved as a CSS file, which you can use as your website as normal.</p>
+					<ol>
+						<li>You write Sass (.scss files)</li>
+						<li>You run a command (sass --watch) on the command line</li>
+						<li>.scss files compile into .css files</li>
+					</ol>
 				</section>
 
 				<section>
@@ -90,6 +95,19 @@
 				</section>
 
 				<section>
+					<h3>Sass can help!</h3>
+					<h4>It comes with a ton of great features, including:</h4>
+					<ul>
+						<li>Variables</li>
+						<li>Nesting</li>
+						<li>Parials</li>
+						<li>Mixins</li>
+						<li>Inheritance</li>
+						<li>Operators</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>Variables</h3>
 					<p>Think of variables as a way of storing information that you want to reuse throughout your stylesheet.</p>
 					<p>You can store things like colors, font stacks, or any CSS value you'll want to reuse.</p>
@@ -107,7 +125,7 @@ body {
   color: $primary-color;
 }
 					</code></pre>
-					<p>Processed:</p>
+					<p>CSS</p>
 					<pre><code class="hljs" data-trim contenteditable>
 body {
   font: 100% Helvetica, sans-serif;
@@ -145,7 +163,7 @@ nav {
 				</section>
 
 				<section>
-					<h2>Processed</h2>
+					<h2>CSS</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 nav ul {
   margin: 0;
@@ -183,7 +201,7 @@ _partial.scss
 				<section>
 					<h3>Import</h3>
 					<p>Sass partials are used with the "@import" directive.</p>
-					<p>Let's say you have a couple of Sass files, _reset.scss and base.scss. We want to import _reset.scss into base.scss</p>
+					<p>Let's say you have a couple of Sass files, _reset.scss and main.scss. We want to import _reset.scss into main.scss</p>
 				</section>
 
 				<section>
@@ -200,7 +218,7 @@ ol {
 }
 					</code></pre>
 					<pre><code class="hljs" data-trim contenteditable>
-// base.scss
+// main.scss
 
 @import 'reset';
 
@@ -212,7 +230,7 @@ body {
 				</section>
 
 				<section>
-					<h2>Processed</h2>
+					<h2>CSS</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 html, body, ul, ol {
   margin: 0;
@@ -252,7 +270,7 @@ body {
 				</section>
 
 				<section>
-					<h2>Processed</h2>
+					<h2>CSS</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 .box {
   -webkit-border-radius: 10px;
@@ -291,7 +309,7 @@ body {
 				</section>
 
 				<section>
-					<h2>Processed</h2>
+					<h2>CSS</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 .message, .success, .error {
   border: 1px solid #cccccc;
@@ -331,7 +349,7 @@ aside[role="complimentary"] {
 				</section>
 
 				<section>
-					<h2>Processed</h2>
+					<h2>CSS</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 .container {
   width: 100%;
@@ -353,17 +371,7 @@ aside[role="complimentary"] {
 				<section>
 					<h3>Compass</h3>
 					<p>Compass is an open-source CSS authoring framework which uses the Sass stylesheet language to make writing stylesheets powerful and easy.</p>
-					<a href="http://compass-style.org/reference/compass/">http://compass-style.org/reference/compass/css3/border_radius/</a>
-				</section>
-
-				<section>
-					<h2> I'm sold. How do I get started?</h2>
-				</section>
-
-				<section>
-					<h3>Installing SASS &amp; Compass</h3>
-					<p>Sass and Compass get installed as Ruby gems so you'll need to have Ruby on your machine.</p>
-					<p>Great instructions here: <a href="http://thesassway.com/beginner/getting-started-with-sass-and-compass">http://thesassway.com/beginner/getting-started-with-sass-and-compass</a>
+					<a href="http://compass-style.org/">http://compass-style.org/</a>
 				</section>
 
 				<section>
@@ -373,7 +381,33 @@ aside[role="complimentary"] {
 						<li>SCSS: Main syntax ("Sassy CSS"). New as of Sass 3</li>
 						<li>Sass: Older syntax</li>
 					</ul>
-					<p><small>* All examples we saw today were written in "SCSS" format.</small>
+					<p><small>* All examples we saw today were written in "SCSS" format.</small></p>
+				</section>
+
+				<section>
+					<h3>Best practices</h3>
+					<ul>
+						<li>Avoid nesting too deep. Nesting is great for components (i.e. header, footer, nav, etc.)</li>
+						<li>Use hyphenated class names (no camelCase or snake_case).</li>
+						<li>Name variables <a href="http://webdesign.tutsplus.com/tutorials/quick-tip-name-your-sass-variables-modularly--webdesign-13364">modularly.</a></li>
+						<li>Structure your partial files so it's easy to maintain: <a href="https://github.com/lvecchio/sass-project-structure/tree/master/sass">https://github.com/lvecchio/sass-project-structure/tree/master/sass</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Tools</h3>
+					<ul>
+						<li>Sassmeister - <a href="http://sassmeister.com/">http://sassmeister.com/</a></li>
+						<li>Scout - <a href="http://mhs.github.io/scout-app/">http://mhs.github.io/scout-app/</a></li>
+						<li>Bourbon - <a href="http://bourbon.io/">http://bourbon.io/</a></li>
+						<li>Compass - <a href="http://compass-style.org/">http://compass-style.org/</a></li>
+						<li>Burbon Neat - <a href="http://neat.bourbon.io/">http://neat.bourbon.io/</a></li>
+						<li>Bootstrap Sass - <a href="https://github.com/twbs/bootstrap-sass">https://github.com/twbs/bootstrap-sass</a></li>
+						<li>Susy - <a href="http://susy.oddbird.net/">http://susy.oddbird.net/</a></li>
+						<li>Breakpoint Sass - <a href="http://breakpoint-sass.com/">http://breakpoint-sass.com/</a></li>
+					</ul>
+				</section>
+
 				<section>
 					<h2> Questions? </h2>
 				</section>
@@ -382,6 +416,7 @@ aside[role="complimentary"] {
 					<h3>Resources:</h3>
 					<ul>
 						<li>Sass Guide: <a href="http://sass-lang.com/guide">http://sass-lang.com/guide</a></li>
+						<li>The Sass Way: <a href="http://thesassway.com/">http://thesassway.com/</a></li>
 						<li>Getting Started with Sass and Compass: <a href="http://thesassway.com/beginner/getting-started-with-sass-and-compass">http://thesassway.com/beginner/getting-started-with-sass-and-compass</a>
 						<li>Compass Code Reference: <a href="http://compass-style.org/reference/compass/">http://compass-style.org/reference/compass/</a></li>
 					</ul>
